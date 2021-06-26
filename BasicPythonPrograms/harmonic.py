@@ -8,13 +8,17 @@
 
 
 def harmonic_generate(N):
-    """harmonic_generate [This function will generate harmonic values of a series by aplyying formulae inside for loop.]
+    """
 
-    Args:
-        N ([int]): [The args N is used for getting user input of int number ]
+    Description:
+        This function will generate harmonic values of a series by aplyying formulae inside for loop.
 
-    Returns:
-        [harmonic]: [returns value of harmonic number by using harmonic formulae]
+    Parametre:
+        N is used for getting user input of int number.
+
+    Return:
+        value of harmonic number by using harmonic formulae.
+
     """
     # taking initial harmonic value as 1.00
     harmonic = 1.00

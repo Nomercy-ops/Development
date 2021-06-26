@@ -8,10 +8,15 @@
 
 
 def power_table(input):
-    """power_table [This function is used for printing power of 2 where by taking for loop we will iterate our loop
-                    that times and input is the number of times user want to iterate but it is capped to 31. ]
-    Args:
-        input ([int]): [This args is used for getting user input and it is getting N values.]
+    """
+
+    Description:
+        This function is used for printing power of 2 where by taking for loop we will iterate our loop
+        that times and input is the number of times user want to iterate but it is capped to 31. 
+
+    Parameter:
+        input is used for getting user input and it is getting N values.
+
     """
     for i in range(input):
         if i <= input:

@@ -8,14 +8,19 @@
 
 
 def prime_fact(number):
-    """prime_fact [This function used while loop for Traversing till i*i <= N and and while traversing it will check
-    in if conditions that number mod i is true then it will increament i value and continue for loop and returns our number]
+    """
 
-    Args:
-        number ([int]): [This number args is used for getting user number so that number goes through while loop for finding prime.]
+    prime_fact 
+        This function used while loop for Traversing till i*i <= N and and while traversing it will check
+        in if conditions that number mod i is true then it will increament i value and continue for loop 
+        and returns our number.
 
-    Returns:
-        [int]: [prime factor number values as a output.]
+    Parameter:
+        number  is used for getting user number so that number goes through while loop for finding prime.
+
+    Return:
+        prime factor of number values as a output.
+
     """
     i = 2
     while i * i <= number:

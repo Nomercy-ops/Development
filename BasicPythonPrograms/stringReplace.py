@@ -13,9 +13,14 @@ message = 'Hello <<username>>, How are you?'
 
 
 def replace_username(username):
-    """replace_username [This function is used for replacing string from a message and used re.sub  to replace oldvalue with newvalue from message]
+    """
+
+    Description:
+        This function is used for replacing string from a message and used re.sub 
+        To replace oldvalue with newvalue from message.
     Args:
-        username ([string]): [This args contains userinput of name and it is used for replacing old value]
+        username  contains userinput of name and it is used for replacing old value.
+
     """
     if len(username) >= 3:
 

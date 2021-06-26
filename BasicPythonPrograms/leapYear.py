@@ -6,11 +6,17 @@
 @Title : Program Aim is check the given user input of year is a leap year or not.. 
 """
 
+
 def check_leapyear(year):
-    """check_leapyear [This function will first check that a give user input is 4-digit or not,if that is true then
-                       It will further check for condition if  statement and gives the result.]
-    Args:
-        year ([int]): [This args is used for getting user input of year for checking leap year or not.]
+    """
+
+    Description: 
+        This function will first check that a give user input is 4-digit or not,if that is true then
+        It will further check for condition if  statement and gives the result.
+
+    Parameter:
+        year  is used for getting user input of year for checking leap year or not.
+
     """
 
     if (year <= 999 or year > 9999):

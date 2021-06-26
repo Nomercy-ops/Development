@@ -10,10 +10,16 @@ import random
 
 
 def flipCoin(userinput):
-    """flipCoin [This method is used for fliping of coin by using random if number is 0 then it will be added to head count, 
-                and in case of number 1 tails keep increament untill for loops ends]
-    Args:
-        userinput ([int]): [This args is used for getting number of flips that user wants.]
+    """
+
+    Description:
+        This method is used for fliping of coin by using random 
+        if number is 0 then it will be added to head count, 
+        and in case of number 1 tails keep increament untill for loops ends.
+
+    Parameter:
+        userinput is used for getting number of flips that user wants.
+
     """
     # variables for storing and tracking count of heads and tails
     heads = 0
@@ -40,6 +46,7 @@ def flipCoin(userinput):
     else:
         print("Enter a Positive Number : ")
 
+
 userinput = int(input("\n How many times do you want to flip a coin :  "))
 flipCoin(userinput)
-print(flipCoin.__doc__)
+

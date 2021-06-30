@@ -13,3 +13,9 @@
 * 4. Write a program Quadratic.java to find the roots of the equation a*x*x + b*x + c.
 * 5. Write a program WindChill.java that takes two double command-line
   
+# Logical Programs
+* 1. Gambler
+* 2. Coupon Numbers
+* 3. Simulate Stopwatch Program
+* 4. Cross Game or Tic-Tac-Toe Game
+  

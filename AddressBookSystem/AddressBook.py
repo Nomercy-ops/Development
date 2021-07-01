@@ -1,38 +1,14 @@
 import json
-import logging
-
-# logging basic config method and saving log files
-logging.basicConfig(filename='addressbook.log', level=logging.INFO,
-                    format='%(asctime)s:%(funcName)s:%(levelname)s:%(message)s')
-logging.basicConfig(filename='addressbook.log', level=logging.ERROR,
-                    format='%(asctime)s:%(funcName)s:%(levelname)s:%(lineno)d')
+from LoggerFormat import logger
+from UserDetailsValidation import ValidateDetails
 
 
 class AddressBookManage:
+   
 
     def __init__(self):
         self.list = []
-
-
-    def createFile(self):
-        """
-    Description:
-        This method is used for creating a json file for storing addressbook details.
-    Parameter:
-        It takes self as a parameter  to create items of list inside json file.
-       
-    """
-        try:
-            self.list = {'data': []}
-            with open('rikesh'+'.json', 'a+') as file:
-                json.dump(self.list, file, indent=2)
-                logging.info('File Successfully Created..')
-        except Exception as e:
-            logging.error(e)
-        
-        finally:
-                file.close()
-            
+                 
 
     def openFile(self):
         """
@@ -45,11 +21,12 @@ class AddressBookManage:
 
         try:
 
-            with open('rikesh'+'.json', 'r') as file:
+            with open('address'+'.json', 'r') as file:
                 self.list = json.load(file)
 
         except FileNotFoundError:
-            logging.error('Invalid file name')
+            logger.error('Invalid file name')
+            
 
     def addDetails(self):
         """
@@ -61,19 +38,21 @@ class AddressBookManage:
        
     """
         addNew = {}
-        firstName = input("Enter your first name: ")
+        id = ValidateDetails.getId()
+        addNew['id'] = id
+        firstName = ValidateDetails.validateName()
         addNew['firstname'] = firstName
-        lastName = input("Enter your last name: ")
+        lastName = ValidateDetails.validateName()
         addNew['lastname'] = lastName
-        mobileNumber = input("Enter your phone number: ")
+        mobileNumber = ValidateDetails.validateNumber()
         addNew['mobilenumber'] = mobileNumber
-        address = input("Enter your address ")
+        address = ValidateDetails.validateAddress()
         addNew['address'] = address
-        zipcode = input("Enter your zipcode: ")
+        zipcode = ValidateDetails.validateZipcode()
         addNew['zipcode'] = zipcode
-        city = input("Enter your city name: ")
+        city = ValidateDetails.validateCity()
         addNew['city'] = city
-        state = input("Enter your state name: ")
+        state = ValidateDetails.validateState()
         addNew['state'] = state
         self.list['data'].append(addNew)
         self.saveDetails()
@@ -88,12 +67,12 @@ class AddressBookManage:
        
     """
         try:
-            with open('rikesh' + '.json', 'w+') as file:
+            with open('address' + '.json', 'w+') as file:
                 json.dump(self.list, file, indent=2)
-                logging.info("file successfully saved...")
+                logger.info("file successfully saved...")
         
         except Exception as e:
-            logging.error(e)
+            logger.error(e)
 
         finally:
                 file.close()
@@ -110,57 +89,55 @@ class AddressBookManage:
        
     """
         try:
+            
             flag = updateDetails = False
             if len(self.list['data']) >= 1:
-                fName = input("Enter the First Name ")
-                lName = input("Enter the Last Name ")
+                idNumber = input("Enter Your Unique id : ")
                 for i in range(len(self.list['data'])):
-                    if (self.list['data'][i]['firstname'] == fName) and (self.list['data'][i]['lastname'] == lName):
+                    if (self.list['data'][i]['id'] == idNumber):
                         flag = True
                         if flag:
                             option = int(
-                            input(" Select AnyOne Option to update your Profile\n 1 First Name \n 2 Last Name \n 3 Mobile Number\n 4 Address \n 5 Zipcode \n 6 city \n 7 state \n "))
+                            input(" Select Any One Option to update your Profile\n 1 First Name \n 2 Last Name \n 3 Mobile Number\n 4 Address \n 5 Zipcode \n 6 city \n 7 state \n "))
 
                             if option == 1:
-                                firstName = int(
-                                    input("Enter new First Name : "))
+                                firstName = ValidateDetails.validateName()
                                 self.list['data'][i]['firstname'] = firstName
                                 self.saveDetails()
                                 updateDetails = True
 
                             elif option == 2:
-                                lastName = int(input("Enter new Last Name : "))
+                                lastName = ValidateDetails.validateName()
                                 self.list['data'][i]['lastname'] = lastName
                                 self.saveDetails()
                                 updateDetails = True
 
                             elif option == 3:
-                                mobileNumber = int(
-                                    input("Enter new Mobile number : "))
+                                mobileNumber = ValidateDetails.validateNumber()
                                 self.list['data'][i]['mobilenumber'] = mobileNumber
                                 self.saveDetails()
                                 updateDetails = True
 
                             elif option == 4:
-                                address = input("Enter your new Address : ")
+                                address = ValidateDetails.validateAddress()
                                 self.list['data'][i]['address'] = address
                                 self.saveDetails()
                                 updateDetails = True
 
                             elif option == 5:
-                                zipcode = int(input("Enter new zipcode : "))
+                                zipcode = ValidateDetails.validateZipcode()
                                 self.list['data'][i]['zipcode'] = zipcode
                                 self.saveDetails()
                                 updateDetails = True
 
                             elif option == 6:
-                                city = input("Enter new city name : ")
+                                city = ValidateDetails.validateCity()
                                 self.list['data'][i]['city'] = city
                                 self.saveDetails()
                                 updateDetails = True
 
                             elif option == 7:
-                                state = input("Enter new state name : ")
+                                state = ValidateDetails.validateState()
                                 self.list['data'][i]['state'] = state
                                 self.saveDetails()
                                 updateDetails = True
@@ -171,12 +148,12 @@ class AddressBookManage:
                                 self.updateDetails()
 
         except ValueError:
-                        logging.error("Enter a valid option")
+                        logger.error("Enter a valid option")
                         updateDetails = False
                         self.updateDetails()
 
         except Exception as e:
-            logging.error(e)
+            logger.error(e)
             self.updateDetails()
 
 
@@ -192,17 +169,16 @@ class AddressBookManage:
     """ 
         try:
             if len(self.list['data']) >= 1:
-                firstName = input("Enter the First Name ")
-                lastName = input("Enter the Last Name ")
+                idNumber = input("Enter Your Unique id : ")
                 for i in range(len(self.list['data'])):
-                    if ((self.list['data'][i]['firstname']) == firstName and (self.list['data'][i]['lastname']) == lastName):
-                        logging.info(" Data Removed Successfully ")
+                    if ((self.list['data'][i]['id']) == idNumber): 
+                        logger.info(" Data Removed Successfully ")
                         del self.list['data'][i]
                         self.saveDetails()
                         return
                     
         except Exception as e:
-            logging.error(e)
+            logger.error(e)
 
 
     def displayDetails(self):
@@ -215,6 +191,10 @@ class AddressBookManage:
         display all the stored details.
        
     """
-        with open('rikesh' + '.json', 'r') as file:
+        with open('address' + '.json', 'r') as file:
             self.list = json.load(file)
-            logging.info(self.list)
+            logger.info(self.list)
+           
+            
+          
+            

@@ -6,11 +6,9 @@
 @Title : Program Aim perform CRUD operations on address book
 """
 
+from LoggerFormat import logger
 from AddressBook import AddressBookManage
-import logging
 
-logging.basicConfig(filename='addressbook.log', level=logging.ERROR,
-                    format='%(asctime)s:%(funcName)s:%(levelname)s:%(lineno)d')
 
 if __name__ == "__main__":
     
@@ -59,7 +57,8 @@ if __name__ == "__main__":
     """
                 print('Good bye!!')
                 exit()
-        
+
+            print(" Welcome To Address Book System ")
             address.openFile()  # opening the file
             # Asks user for input
             print(' \n 1. Add new contact \n 2. Delete Contacts \n 3. Update AddressBook \n 4. Display AddressBook \n 5. exit')
@@ -70,8 +69,8 @@ if __name__ == "__main__":
          
 
     except ValueError:
-        logging.error("Enter a valid Input")
+        logger.error("Enter a valid Input")
 
     except Exception as e:
-        logging.error(e)
+        logger.error(e)
 

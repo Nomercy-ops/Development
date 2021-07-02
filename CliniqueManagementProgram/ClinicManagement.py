@@ -24,8 +24,11 @@ if __name__ == "__main__":
             print("3.Print Doctor")
             print("4.Print Patients")
             print("5.Take Appointment")
-            print("6.Exit")
-
+            print("6.Search Doctor BY Id")
+            print("7.Search Patient BY Id")
+            print("8.Search Doctor BY Name")
+            print("9.Search Patient BY Name")
+            print("10.Exit")
         
        
             choice = input("Enter your choice: ")
@@ -47,6 +50,22 @@ if __name__ == "__main__":
 
             elif choice == '5':
                 TakeAppoinment.getAppointment()
+            
+            elif choice == '6':
+                doctor.readfile()
+                doctor.searchDoctorById()
+
+            elif choice == '7':
+                patient.readfile()
+                patient.searchPatientById()
+            
+            elif choice == '8':
+                doctor.readfile()
+                doctor.searchDoctorByName()
+            
+            elif choice == '9':
+                patient.readfile()
+                patient.searchPatientByName()
 
     
             else:

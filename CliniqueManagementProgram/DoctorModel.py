@@ -4,17 +4,18 @@ from LoggerHandler import logger
 
 
 class Doctor():
-    # class level private variables
+     # class level private variables
     __doctorId = None
     __doctorName = None
     __availability = None
     __specialist = None
 
+
     def __init__(self):
         
         self.list = []
 
-    # getter and setter method for doctor Id
+     # getter and setter method for doctor Id
     def getDoctorId(self):
         return self.__doctorId
 
@@ -42,11 +43,6 @@ class Doctor():
 
     def setSpecialist(self, spec):
         self.__specialist = spec
-
-    def toString(self):
-        jsonFile = {"Id": self.getDoctorId(), "Name": self.getDoctorName(
-        ), "Availability": self.getAvailability(), "Speciality": self.getSpecialist(), "PatientCount": 0}
-        return jsonFile
 
    
     def readfile(self):
@@ -79,20 +75,26 @@ class Doctor():
 
         self.doctorId = input("Enter doctor Id: ")
         self.setDoctorId(self.doctorId)
+        addDoctor['id'] = self.getDoctorId()
 
         self.doctorName = input("Enter Doctor Name: ")
         self.setDoctorName(self.doctorName)
+        addDoctor['name'] = self.getDoctorName()
 
         self.availability = input("Enter doctor Availability(AM,PM OR BOTH): ")
         self.setAvailability(self.availability)
+        addDoctor['availability'] = self.getAvailability()
 
         self.specialist = input("Enter Doctor speciality: ")
         self.setSpecialist(self.specialist)
+        addDoctor['speciality'] = self.getSpecialist()
 
-        doctorDetails = self.list
-        doctorDetails.append(self.toString())
+        self.list['doctorlist'].append(addDoctor)
         self.writeFile()
 
-doctor = Doctor()
+    def printDoctorList(self):
+        with open('doctors' + '.json', 'r') as file:
+            self.list = json.load(file)
+            logger.info(self.list)
         
-
+doctor = Doctor()

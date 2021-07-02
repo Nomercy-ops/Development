@@ -35,16 +35,12 @@ class Patient():
         self.__age = age
 
     # getter and setter method for doctor speciality
-    def getMObileNumber(self):
+    def getMobileNumber(self):
         return self.__mobileNumber
 
-    def setMobileNumber(self, mobilenumber):
-        self.__mobileNumber = mobilenumber
+    def setMobileNumber(self, mobileNumber):
+        self.__mobileNumber = mobileNumber
 
-    def toString(self):
-        jsonFile = {"Id": self.getPatientId(), "Name": self.getPatientName(
-        ), "Age": self.getAge(), "Mobile": self.getMObileNumber(),"DoctorId":""}
-        return jsonFile
 
     def readfile(self):
         try:
@@ -72,21 +68,31 @@ class Patient():
     def addPatient(self):
         print("Enter the Patients details here")
 
+        addPatient = {}
+
         self.patientId = input("Enter Patient Id: ")
         self.setPatientId(self.patientId)
+        addPatient['id'] = self.getPatientId()
 
         self.patientName = input("Enter Patient Name: ")
         self.setPatientName(self.patientName)
+        addPatient['name'] = self.getPatientName()
 
         self.age = input("Enter Patient Age: ")
         self.setAge(self.age)
+        addPatient['age'] = self.getAge()
 
-        self.mobileNumber = input("Enter Patient mobileNUmber: ")
+        self.mobileNumber = input("Enter Patient mobile Number: ")
         self.setMobileNumber(self.mobileNumber)
+        addPatient['number'] = self.getMobileNumber()
 
-        patientDetails = self.list
-        patientDetails.append(self.toString())
+        self.list['patientlist'].append(addPatient)
         self.writeFile()
+
+    def printPatientList(self):
+        with open('patients' + '.json', 'r') as file:
+            self.list = json.load(file)
+            logger.info(self.list)
 
 patient = Patient()
 

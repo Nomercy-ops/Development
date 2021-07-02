@@ -1,16 +1,16 @@
-[
-  {
-    "Id": "35",
-    "Name": "karuna chhetri",
-    "Age": "21",
-    "Mobile": "7689765467",
-    "DoctorId": ""
-  },
-  {
-    "Id": "33",
-    "Name": "kiran kumar",
-    "Age": "27",
-    "Mobile": "8798765432",
-    "DoctorId": ""
-  }
-]
+{
+  "patientlist": [
+    {
+      "id": "31",
+      "name": "Rikesh",
+      "age": "26",
+      "number": "8797656765"
+    },
+    {
+      "id": "32",
+      "name": "karuna bhattarai",
+      "age": "21",
+      "number": "7865676543"
+    }
+  ]
+}

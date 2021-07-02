@@ -1,16 +1,28 @@
-[
-  {
-    "Id": "33",
-    "Name": "rakesh",
-    "Availability": "pm",
-    "Speciality": "child specialist",
-    "PatientCount": 0
-  },
-  {
-    "Id": "35",
-    "Name": "shankar",
-    "Availability": "am",
-    "Speciality": "nuro",
-    "PatientCount": 0
-  }
-]
+{
+  "doctorlist": [
+    {
+      "id": "31",
+      "name": "Rikesh",
+      "availability": "AM",
+      "specialist": "Surgeon"
+    },
+    {
+      "id": "12",
+      "name": "sashank barman",
+      "availability": "4PM",
+      "specialist": "Neuro"
+    },
+    {
+      "id": "23",
+      "name": "kisan kumar",
+      "availability": "2PM",
+      "speciality": "Gynacologist"
+    },
+    {
+      "id": "32",
+      "name": "sagar rai",
+      "availability": "10AM",
+      "speciality": "nuero"
+    }
+  ]
+}

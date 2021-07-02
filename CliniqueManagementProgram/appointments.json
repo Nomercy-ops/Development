@@ -1,0 +1,28 @@
+{
+  "Rikesh": [
+    {
+      "patientName": "Kriti",
+      "Id": 12,
+      "patientAge": 23,
+      "mobileNumber": "8446663013",
+      "time": "10AM"
+    },
+    {
+      "patientName": "Shivani",
+      "Id": "33",
+      "patientAge": "21",
+      "mobileNumber": "8798767865",
+      "time": "10AM"
+    }
+  ],
+
+  "Samualdev": [
+    {
+      "patientName": "Rajesh",
+      "Id": "35",
+      "patientAge": "32",
+      "mobileNumber": "7865787678",
+      "time": "3PM"
+    }
+  ]
+}

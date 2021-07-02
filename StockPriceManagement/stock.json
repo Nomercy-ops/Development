@@ -1,0 +1,22 @@
+[
+  {
+    "stock": "micro",
+    "share_price": 25,
+    "total_share": 214
+  },
+  {
+    "stock": "amazon",
+    "total_share": 50,
+    "share_price": 126
+  },
+  {
+    "stock": "fb",
+    "total_share": 25,
+    "share_price": 146
+  },
+  {
+    "stock": "flake",
+    "total_share": 32,
+    "share_price": 131
+  }
+]

@@ -10,34 +10,48 @@ from DoctorModel import doctor
 from PatientModel import patient
 from LoggerHandler import logger
 
-try:
+if __name__ == "__main__":
 
-    print(" Welcome to Clinic Management System ")
+    try:
 
-    while True:
-        # choice input
+        print(" Welcome to Clinic Management System ")
 
-        print("1.Add Doctor")
-        print("2.Add Patients")
-        print("3.Print Doctor")
-        print("4.Print Patients")
-        print("5.Exit")
+        while True:
+            # reading json files
+            
+            
+            
+            print("1.Add Doctor")
+            print("2.Add Patients")
+            print("3.Print Doctor")
+            print("4.Print Patients")
+            print("5.Exit")
 
-        choice = input("Enter your choice: ")
+        
+       
+            choice = input("Enter your choice: ")
 
-        if choice == '1':
-            doctor.addDoctor()
+            if choice == '1':
+                doctor.readfile()
+                doctor.addDoctor()
         
     
-        elif choice == '2':
-            patient.addPatient()
-    
+            elif choice == '2': 
+                patient.readfile()
+                patient.addPatient()
 
-        else:
-            exit()
+            elif choice == '3':
+                doctor.printDoctorList()
 
-except ValueError:
-    logger.error("Invalid choice")
+            elif choice == '4':
+                patient.printPatientList()
+
     
-except Exception as e:
-    logger.error(e)
+            else:
+                exit()
+
+    except ValueError:
+        logger.error("Invalid choice")
+    
+    except Exception as e:
+        logger.error(e)

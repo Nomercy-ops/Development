@@ -1,0 +1,16 @@
+[
+  {
+    "Id": "33",
+    "Name": "rakesh",
+    "Availability": "pm",
+    "Speciality": "child specialist",
+    "PatientCount": 0
+  },
+  {
+    "Id": "35",
+    "Name": "shankar",
+    "Availability": "am",
+    "Speciality": "nuro",
+    "PatientCount": 0
+  }
+]

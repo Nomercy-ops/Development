@@ -115,9 +115,52 @@ class Patient():
         self.writeFile()
 
     def printPatientList(self):
+        """
+    Description:
+        This method is used for displaying all the list of patients
+       
+    """
         with open('patients' + '.json', 'r') as file:
             self.list = json.load(file)
             logger.info(self.list)
+
+    
+    def searchPatientById(self):
+        """
+    Description:
+        This method is used to find the Patient by id
+       
+    """
+        try:
+                idNumber = ValidateDetails.validateId()
+                for i in range(len(self.list['patientlist'])):
+                    if ((self.list['patientlist'][i]['id']) == idNumber): 
+                        logger.info(" Patient is Available")
+                        break
+                    else:
+                        logger.info(" Patient is currently Not Available")
+                    
+        except Exception as e:
+            logger.error(e)
+
+    
+    def searchPatientByName(self):
+        """
+    Description:
+        This method is used to find the Patient by name
+       
+    """
+        try:
+                name = ValidateDetails.validateName()
+                for i in range(len(self.list['patientlist'])):
+                    if ((self.list['patientlist'][i]['name']) == name): 
+                        logger.info(" Patient is Available")
+                        break
+                    else:
+                        logger.info(" Patient is currently Not Available")
+                    
+        except Exception as e:
+            logger.error(e)
 
 
 

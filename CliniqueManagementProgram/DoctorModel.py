@@ -118,9 +118,52 @@ class Doctor():
         self.writeFile()
 
     def printDoctorList(self):
+        """
+    Description:
+        This method is used for displaying all doctor list
+       
+    """
         with open('doctors' + '.json', 'r') as file:
             self.list = json.load(file)
             logger.info(self.list)
+
+    
+    def searchDoctorById(self):
+        """
+    Description:
+        This method is used to find the doctor by id
+       
+    """
+        try:
+                idNumber = ValidateDetails.validateId()
+                for i in range(len(self.list['doctorlist'])):
+                    if ((self.list['doctorlist'][i]['id']) == idNumber): 
+                        logger.info(" Doctor is Available")
+                        break
+                    else:
+                        logger.info(" Doctor is currently Not Available")
+                    
+        except Exception as e:
+            logger.error(e)
+
+
+    def searchDoctorByName(self):
+        """
+    Description:
+        This method is used to find the doctor by name
+       
+    """
+        try:
+                name = ValidateDetails.validateName()
+                for i in range(len(self.list['doctorlist'])):
+                    if ((self.list['doctorlist'][i]['name']) == name): 
+                        logger.info(" Patient is Available")
+                        break
+                    else:
+                        logger.info(" Patient is currently Not Available")
+                    
+        except Exception as e:
+            logger.error(e)
 
 
         

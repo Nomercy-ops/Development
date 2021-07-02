@@ -6,6 +6,7 @@
 @Title : Program Aim is to manage a list of Doctors associated with the Clinique.
 """
 
+from Appointment import TakeAppoinment
 from DoctorModel import doctor
 from PatientModel import patient
 from LoggerHandler import logger
@@ -17,15 +18,13 @@ if __name__ == "__main__":
         print(" Welcome to Clinic Management System ")
 
         while True:
-            # reading json files
-            
-            
-            
+
             print("1.Add Doctor")
             print("2.Add Patients")
             print("3.Print Doctor")
             print("4.Print Patients")
-            print("5.Exit")
+            print("5.Take Appointment")
+            print("6.Exit")
 
         
        
@@ -45,6 +44,9 @@ if __name__ == "__main__":
 
             elif choice == '4':
                 patient.printPatientList()
+
+            elif choice == '5':
+                TakeAppoinment.getAppointment()
 
     
             else:

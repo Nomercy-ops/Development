@@ -1,3 +1,5 @@
+from os import name
+from InputValidation import ValidateDetails
 import json
 from LoggerHandler import logger
 
@@ -43,6 +45,13 @@ class Patient():
 
 
     def readfile(self):
+        """
+    Description:
+        This method is used for opening and loading stored details from a json file.
+    Parameter:
+        It takes self as a parameter and load all the data from json file to a list.
+       
+    """
         try:
 
             with open('patients'+'.json', 'r') as file:
@@ -53,6 +62,14 @@ class Patient():
 
 
     def writeFile(self):
+        """
+    Description:
+        This method is used for adding a patient details in json file.
+        it creates a dictionary and add details into it and then append them to a list.
+    Parameter:
+        It takes self as a parameter and append details into list.
+       
+    """
         try:
             with open('patients' + '.json', 'w+') as file:
                 json.dump(self.list, file, indent=2)
@@ -66,23 +83,31 @@ class Patient():
 
 
     def addPatient(self):
+        """
+    Description:
+        This method is used for adding a Patient details.
+        it creates a dictionary and add details into it and then append them to a list.
+    Parameter:
+        It takes self as a parameter and append details into list.
+       
+    """
         print("Enter the Patients details here")
 
         addPatient = {}
 
-        self.patientId = input("Enter Patient Id: ")
+        self.patientId = ValidateDetails.validateId()
         self.setPatientId(self.patientId)
         addPatient['id'] = self.getPatientId()
 
-        self.patientName = input("Enter Patient Name: ")
+        self.patientName = ValidateDetails.validateName()
         self.setPatientName(self.patientName)
         addPatient['name'] = self.getPatientName()
 
-        self.age = input("Enter Patient Age: ")
+        self.age = ValidateDetails.validateAge()
         self.setAge(self.age)
         addPatient['age'] = self.getAge()
 
-        self.mobileNumber = input("Enter Patient mobile Number: ")
+        self.mobileNumber = ValidateDetails.validateNumber()
         self.setMobileNumber(self.mobileNumber)
         addPatient['number'] = self.getMobileNumber()
 
@@ -93,6 +118,8 @@ class Patient():
         with open('patients' + '.json', 'r') as file:
             self.list = json.load(file)
             logger.info(self.list)
+
+
 
 patient = Patient()
 

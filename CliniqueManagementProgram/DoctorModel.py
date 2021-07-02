@@ -1,6 +1,7 @@
 
 import json
 from LoggerHandler import logger
+from InputValidation import ValidateDetails
 
 
 class Doctor():
@@ -46,6 +47,13 @@ class Doctor():
 
    
     def readfile(self):
+        """
+    Description:
+        This method is used for opening and loading stored details from a json file.
+    Parameter:
+        It takes self as a parameter and load all the data from json file to a list.
+       
+    """
         try:
 
             with open('doctors'+'.json', 'r') as file:
@@ -53,9 +61,18 @@ class Doctor():
 
         except FileNotFoundError:
             logger.error('Invalid file name')
+            
 
 
     def writeFile(self):
+        """
+    Description:
+        This method is used for adding a doctor details in json file.
+        it creates a dictionary and add details into it and then append them to a list.
+    Parameter:
+        It takes self as a parameter and append details into list.
+       
+    """
         try:
             with open('doctors' + '.json', 'w+') as file:
                 json.dump(self.list, file, indent=2)
@@ -69,25 +86,33 @@ class Doctor():
             
 
     def addDoctor(self):
+        """
+    Description:
+        This method is used for adding a doctor details.
+        it creates a dictionary and add details into it and then append them to a list.
+    Parameter:
+        It takes self as a parameter and append details into list.
+       
+    """
         print("Enter the doctor details here")
 
         addDoctor = {}
 
-        self.doctorId = input("Enter doctor Id: ")
+        self.doctorId = ValidateDetails.validateId()
         self.setDoctorId(self.doctorId)
         addDoctor['id'] = self.getDoctorId()
 
-        self.doctorName = input("Enter Doctor Name: ")
+        self.doctorName = ValidateDetails.validateName()
         self.setDoctorName(self.doctorName)
         addDoctor['name'] = self.getDoctorName()
 
-        self.availability = input("Enter doctor Availability(AM,PM OR BOTH): ")
+        self.availability = ValidateDetails.validateAvailablity()
         self.setAvailability(self.availability)
         addDoctor['availability'] = self.getAvailability()
 
-        self.specialist = input("Enter Doctor speciality: ")
+        self.specialist = ValidateDetails.validateSpeciality()
         self.setSpecialist(self.specialist)
-        addDoctor['speciality'] = self.getSpecialist()
+        addDoctor['specialist'] = self.getSpecialist()
 
         self.list['doctorlist'].append(addDoctor)
         self.writeFile()
@@ -96,5 +121,7 @@ class Doctor():
         with open('doctors' + '.json', 'r') as file:
             self.list = json.load(file)
             logger.info(self.list)
+
+
         
 doctor = Doctor()

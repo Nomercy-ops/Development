@@ -3,26 +3,20 @@
     {
       "id": "31",
       "name": "Rikesh",
-      "availability": "AM",
+      "availability": "10AM",
       "specialist": "Surgeon"
     },
     {
-      "id": "12",
-      "name": "sashank barman",
-      "availability": "4PM",
-      "specialist": "Neuro"
-    },
-    {
-      "id": "23",
-      "name": "kisan kumar",
-      "availability": "2PM",
-      "speciality": "Gynacologist"
-    },
-    {
       "id": "32",
-      "name": "sagar rai",
-      "availability": "10AM",
-      "speciality": "nuero"
+      "name": "Kishankumar",
+      "availability": "2PM",
+      "specialist": "Gynacologist"
+    },
+    {
+      "id": "33",
+      "name": "Samualdev",
+      "availability": "3PM",
+      "specialist": "GeneralPhysician"
     }
   ]
 }

@@ -19,3 +19,11 @@
 * 3. Simulate Stopwatch Program
 * 4. Cross Game or Tic-Tac-Toe Game
   
+# Data Structures
+  * Array
+  * Dictionary
+  * Set
+  * List
+  * Tuple
+  * String
+  

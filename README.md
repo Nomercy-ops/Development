@@ -24,3 +24,11 @@
 * Clinical Management System
 * Stock Price Management
   
+# Data Structures
+  * Array
+  * Dictionary
+  * Set
+  * List
+  * Tuple
+  * String
+  

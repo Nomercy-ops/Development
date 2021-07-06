@@ -18,15 +18,12 @@
 * 2. Coupon Numbers
 * 3. Simulate Stopwatch Program
 * 4. Cross Game or Tic-Tac-Toe Game
-  
-<<<<<<< HEAD
+
 # Object Oriented Programs
 * AddressBook Problem : perform CRUD operations
 * Clinical Management System
 * Stock Price Management
   
-=======
->>>>>>> 856979caf1696c3aa1fc70570b3bbe508af4af5b
 # Data Structures
   * Array
   * Dictionary

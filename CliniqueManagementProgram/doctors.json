@@ -1,0 +1,22 @@
+{
+  "doctorlist": [
+    {
+      "id": "31",
+      "name": "Rikesh",
+      "availability": "10AM",
+      "specialist": "Surgeon"
+    },
+    {
+      "id": "32",
+      "name": "Kishankumar",
+      "availability": "2PM",
+      "specialist": "Gynacologist"
+    },
+    {
+      "id": "33",
+      "name": "Samualdev",
+      "availability": "3PM",
+      "specialist": "GeneralPhysician"
+    }
+  ]
+}

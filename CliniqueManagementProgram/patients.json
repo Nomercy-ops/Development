@@ -1,0 +1,22 @@
+{
+  "patientlist": [
+    {
+      "id": "31",
+      "name": "Rikesh",
+      "age": "26",
+      "number": "8797656765"
+    },
+    {
+      "id": "32",
+      "name": "karuna bhattarai",
+      "age": "21",
+      "number": "7865676543"
+    },
+    {
+      "id": "2345",
+      "name": "Rikesh",
+      "age": "23",
+      "number": "7865454324"
+    }
+  ]
+}
